@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Attendance Results</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attendance Results</h1>
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Count</th>
+        </tr>
+        {% for row in attendance.iterrows() %}
+            <tr>
+                <td>{{ row[1]['User'] }}</td>
+                <td>{{ row[1]['Count'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <form method="GET" action="/export">
+        <button type="submit">Export to Excel</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <title>Attendance Upload</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+       <h1>Upload Attendance File</h1>
+       <form method="post" enctype="multipart/form-data">
+           <input type="file" name="file" accept=".xls,.xlsx" required>
+           <button type="submit">Upload</button>
+       </form>
+   </body>
+   </html>
